@@ -12,7 +12,7 @@ public class Customer extends User{
     public Customer() {
     }
 
-    public Customer(Long idUser, String userName, String password, String name, String surname, LocalDate dateOfBirth, String email, String userType, Long idCustomer, int purchases) {
+    public Customer(Long idUser, String userName, String password, String name, String surname, String dateOfBirth, String email, String userType, Long idCustomer, int purchases) {
         super(idUser, userName, password, name, surname, dateOfBirth, email, userType);
         this.idCustomer = idCustomer;
         this.purchases = purchases;

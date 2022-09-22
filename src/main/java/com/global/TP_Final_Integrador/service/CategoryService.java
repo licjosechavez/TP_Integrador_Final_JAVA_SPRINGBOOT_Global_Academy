@@ -1,6 +1,6 @@
 package com.global.TP_Final_Integrador.service;
 
-import com.global.TP_Final_Integrador.Singleton.CategoriesSingleton;
+import com.global.TP_Final_Integrador.singleton.CategoriesSingleton;
 import com.global.TP_Final_Integrador.model.Category;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.global.TP_Final_Integrador.Singleton;
+package com.global.TP_Final_Integrador.singleton;
 
 import com.global.TP_Final_Integrador.model.*;
 

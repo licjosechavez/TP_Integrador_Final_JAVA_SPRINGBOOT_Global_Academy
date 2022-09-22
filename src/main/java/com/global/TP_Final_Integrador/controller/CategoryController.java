@@ -26,7 +26,8 @@ public class CategoryController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseBody
-    public ResponseEntity<ArrayList<Category>> postCategory(@RequestBody Category category)
+    public ResponseEntity<ArrayList<Category>> postCategory(
+            @RequestBody Category category)
     {
         ArrayList<Category> categories = service.addCategory(category);
         return new ResponseEntity<>(categories, HttpStatus.CREATED);

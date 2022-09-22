@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String name;
     private String surname;
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     private String email;
     private String userType;
 
@@ -18,7 +18,8 @@ public class User {
     public User() {
     }
 
-    public User(Long idUser, String userName, String password, String name, String surname, LocalDate dateOfBirth, String email, String userType) {
+    public User(Long idUser, String userName, String password, String name, String surname,
+                String dateOfBirth, String email, String userType) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
@@ -71,11 +72,11 @@ public class User {
         this.surname = surname;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

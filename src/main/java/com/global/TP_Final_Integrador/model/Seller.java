@@ -11,7 +11,7 @@ public class Seller extends User{
     public Seller() {
     }
 
-        public Seller(Long idUser, String userName, String password, String name, String surname, LocalDate dateOfBirth, String email, String userType, Long idSeller, int sales) {
+        public Seller(Long idUser, String userName, String password, String name, String surname, String dateOfBirth, String email, String userType, Long idSeller, int sales) {
         super(idUser, userName, password, name, surname, dateOfBirth, email, userType);
         this.idSeller = idSeller;
         this.sales = sales;
