@@ -24,7 +24,7 @@ public class UserController {
 
     //Create users
 
-    /*@PostMapping(
+    @PostMapping(
             value = "/users/create",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
@@ -33,10 +33,9 @@ public class UserController {
             @RequestBody User newUser
 
     ) {
-        ResponseEntity<ArrayList<User>> userss = userService.createUser(newUser);
-        return new ResponseEntity<>(userss, HttpStatus.CREATED);
+        return userService.createUser(newUser);
 
-    }*/
+    }
     //
 
 
@@ -65,9 +64,24 @@ public class UserController {
 
     }
 
+    //edit user
+
+    @PutMapping(
+            value = "/users",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ResponseBody
+    public ResponseEntity<User> editUser(
+            @RequestBody User newUser
+    ) {
+        return userService.editUser(newUser);
+
+    }
+
     //delete user
     @DeleteMapping(
-            value = "/users/delete/{id}"
+            value = "/users/delete/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE
 
     )
     @ResponseBody

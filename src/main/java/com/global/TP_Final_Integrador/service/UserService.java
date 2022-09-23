@@ -25,7 +25,7 @@ public class UserService {
         if(user == null){
             users.add(newUser);
             us.setUsers(users);
-            return new ResponseEntity<>(users, HttpStatus.OK);
+            return new ResponseEntity<>(users, HttpStatus.CREATED);
         }else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -52,6 +52,31 @@ public class UserService {
         }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    //Edit user
+    public ResponseEntity<User> editUser(User newUser) {
+        UsersSingleton us = UsersSingleton.getInstance();
+        ArrayList<User> users = us.getUsers();
+        User user = users.stream()
+                .filter(u -> Objects.equals(u.getIdUser(),newUser.getIdUser()))
+                .findFirst()
+                .orElse(null);
+
+        if(user != null){
+            user.setIdUser(newUser.getIdUser());
+            user.setUserName(newUser.getUserName());
+            user.setPassword(newUser.getPassword());
+            user.setName(newUser.getName());
+            user.setSurname(newUser.getSurname());
+            user.setDateOfBirth(newUser.getDateOfBirth());
+            user.setEmail(newUser.getEmail());
+            user.setUserType(newUser.getUserType());
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
     //Delete user
